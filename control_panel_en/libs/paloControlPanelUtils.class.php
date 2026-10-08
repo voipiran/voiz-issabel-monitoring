@@ -55,6 +55,10 @@ class paloControlPanelUtils
     // Leer el ID correspondiente al panel, o NULL si panel no existe
     private function _getPanelID($panel)
     {
+        if (!preg_match('/^[[:alnum:]_]+$/', $panel)) {
+            $this->errMsg = '(internal) Invalid panel name';
+            return NULL;
+        }
     	$tupla = $this->_db->getFirstRowQuery(
             'SELECT id FROM area WHERE name = ?', TRUE, array($panel));
         if (!is_array($tupla)) {
@@ -79,6 +83,10 @@ class paloControlPanelUtils
      */
     function updateExtensionPanel($panel, $extension)
     {
+        if (!preg_match('/^[[:digit:]#*]+$/', $extension)) {
+            $this->errMsg = _tr('Invalid extension');
+            return FALSE;
+        }
     	$panelid = $this->_getPanelID($panel);
         if (is_null($panelid)) return FALSE;
         $r = $this->_db->genQuery('DELETE FROM item_box WHERE id_device = ?',
