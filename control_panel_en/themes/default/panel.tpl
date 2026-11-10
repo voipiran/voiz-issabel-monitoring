@@ -278,7 +278,7 @@
 
   {* باکس های داخلی صف *}
 <script type="text/x-handlebars" data-template-name="extension">
-<div style="float:left; border: black solid 0px; z-index:2;">
+<div class="extension-info" style="float:left; border: black solid 0px; z-index:2;">
 <a class="pbxtooltip" href="#">
      <img src="modules/{$module_name}/images/info.png"style="width:20px; height:20px; opacity:0.8;"/>
      <div>
@@ -296,9 +296,9 @@
      </div>
 </a>
 </div>
-<div style="float:left; width:115px; text-align:left; padding-left:4px; position:relative; height:100%; ">
+<div class="extension-details" style="float:left; width:115px; text-align:left; padding-left:4px; position:relative; height:100%; ">
 {literal}
-<div style="float:left; text-align:left; font-weight:bold; white-space:nowrap; line-height:1.4;">
+<div class="extension-title" style="float:left; text-align:left; font-weight:bold; white-space:nowrap; line-height:1.4;">
     <span style="color:#2c3e50;"><b>{{extension}}</b></span>
     {{#if view.truncatedDescription}}
         <span style="margin-left:7px; color:#34495e;"><b>{{view.truncatedDescription}}</b></span>
@@ -320,7 +320,7 @@
 {/literal}
 </div>
 {literal}
-<div class="phone-mail-container" style="float:right; margin-left:8px; overflow:hidden;">
+<div class="phone-mail-container extension-actions" style="float:right; margin-left:8px; overflow:hidden;">
   <div class="phone-icon" style="float:left;">
     {{view App.DraggablePhoneIconView iconBinding="view.extensionIcon"}}
   </div>
@@ -558,4 +558,3 @@
 var arrLang_main = {$ARRLANG_MAIN};
 var var_init = {$VAR_INIT}
 </script>
-

@@ -47,6 +47,62 @@ i, .fa, .fas, .far, .fab, [class^="fa-"], [class*=" fa-"] {
   color: #000;
   box-sizing: border-box;
 }
+.pbxelement.ExtensionStyle {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 48px;
+  align-items: stretch;
+  column-gap: 4px;
+  direction: ltr;
+  overflow: hidden;
+}
+.pbxelement.ExtensionStyle .extension-info,
+.pbxelement.ExtensionStyle .extension-details,
+.pbxelement.ExtensionStyle .extension-actions {
+  float: none !important;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.pbxelement.ExtensionStyle .extension-info {
+  width: 24px !important;
+  padding: 0 !important;
+}
+.pbxelement.ExtensionStyle .extension-details {
+  width: auto !important;
+  padding: 2px 0 0 !important;
+  overflow: hidden;
+}
+.pbxelement.ExtensionStyle .extension-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  gap: 7px;
+  overflow: hidden;
+}
+.pbxelement.ExtensionStyle .extension-title span {
+  flex: 0 0 auto;
+}
+.pbxelement.ExtensionStyle .extension-title span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pbxelement.ExtensionStyle .extension-actions {
+  width: 48px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  overflow: hidden !important;
+}
+.pbxelement.ExtensionStyle .phone-icon,
+.pbxelement.ExtensionStyle .mail-icon {
+  float: none !important;
+  flex: 0 0 auto;
+  margin: 0 !important;
+}
 .pbxelement > div { white-space: nowrap; }
 .pbxelement:hover {
   transform: translateY(-1px);
